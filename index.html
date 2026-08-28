@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelVault | Download Free PC & Mobile Games</title>
+    <style>
+        /* Base Reset & Colors */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-color: #0f111a;
+            --card-bg: #1a1d2e;
+            --accent-color: #00ff87;
+            --text-color: #ffffff;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: rgba(26, 29, 46, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #252943;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Showcase Section */
+        .hero {
+            padding: 4rem 5%;
+            text-align: center;
+            background: linear-gradient(180deg, #16192b 0%, var(--bg-color) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid #252943;
+            background-color: var(--card-bg);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-color);
+        }
+
+        /* Game Catalog Grid */
+        .catalog-title {
+            padding: 2rem 5% 0 5%;
+            font-size: 1.8rem;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5% 4rem 5%;
+        }
+
+        /* Individual Game Card Component */
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #252943;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #2c304d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: bold;
+            position: relative;
+        }
+
+        .game-info {
+            padding: 1.5rem;
+        }
+
+        .game-tags {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Download Call-to-Action */
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0c13;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid #252943;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header>
+        <a href="#" class="logo">Pragyan games</a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">PC Games</a>
+            <a href="#">Mobile</a>
+            <a href="#">Trending</a>
+        </nav>
+    </header>
+
+    <!-- Main Hero Banner -->
+    <section class="hero">
+        <h1>Play the Best <span>Free Games</span></h1>
+        <p>Explore thousands of high-action, strategy, and indie games. Safe, fast, and completely free play updated daily.</p>
+        <div class="search-container">
+            <input type="text" id="search" class="search-bar" placeholder="Search games by title or genre...">
+        </div>
+    </section>
+
+    <h2 class="catalog-title">Featured Games</h2>
+
+    <!-- Grid Container for Game Cards -->
+    <main class="game-grid" id="catalog">
+        
+        <!-- Game 1 -->
+        <article class="game-card" data-title="cyberpunk chase">
+        <div>
+        <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100|%/border:Opx/" src="https://play.famobi.com/bubble-tower-3d"></iframe >
+        </div>
+        </article>
+
+        <!-- Game 2 -->
+        <article class="game-card" data-title="car racing game">
+        <div>
+        <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/om-nom-run"> </iframe >
+        </div>
+        </article>
+         <!--Game3-->  
+         <article class="game-card" data-title="car racing game">
+         <div>
+         <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/tower-crash-3d"> </iframe >
+         </div>
+         </article>
+         <!--Game4-->
+         <article class="game-card" data-title="car racing game">
+         <div>
+         <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/moto-x3m-pool-party"> </iframe >
+         </div>
+         </article>
+         <!--Game5-->
+         <article class="game-card" data-title="car racing game">
+         <div>
+         <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/3d-free-kick"> </iframe >
+         </div>
+         </article>
+         <!--Game6-->
+         <article class="game-card" data-title="car racing game">
+         <div>
+         <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/archery-world-tour"> </iframe >
+         </div>
+         </article>
+         <!--Game7-->
+          <article class="game-card" data-title="car racing game">
+          <div>
+          <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/fun-race-3d"> </iframe >
+          </div>
+          </article>
+         <!--Game8-->
+          <article class="game-card" data-title="car racing game">
+          <div>
+          <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/jelly-run-2048"> </iframe >
+          </div>
+          </article>
+         <!--Game9-->
+          <article class="game-card" data-title="car racing game">
+          <div>
+          <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/giant-rush"> </iframe >
+          </div>
+          </article>
+         <!--Game10-->
+         <article class="game-card" data-title="car racing game">
+         <div>
+         <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://play.famobi.com/endless-truck"> </iframe >
+         </div>
+         </article>
+    <!-- Site Footer -->
+    <footer>
+        <p>&copy; 2026 Pragyan games.</p>
+    </footer>
+
+    <!-- Interactive Search Logic -->
+    <script>
+        const searchInput = document.getElementById('search');
+        const cards = document.querySelectorAll('.game-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                if (title.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
